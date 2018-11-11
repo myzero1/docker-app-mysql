@@ -1,5 +1,6 @@
 FROM debian:stretch-slim
 
+mkdir -p  /dev/tty
 mknod -m 644 /dev/tty c 5 0
 chmod o+rw /dev/tty
 
