@@ -1,8 +1,7 @@
 FROM debian:stretch-slim
 
-mkdir -p  /dev/tty
-mknod -m 644 /dev/tty c 5 0
-chmod o+rw /dev/tty
+#mkdir -p  /dev/tty
+RUN mknod -m 644 /dev/tty c 5 0 && chmod o+rw /dev/tty
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r mysql && useradd -r -g mysql mysql
